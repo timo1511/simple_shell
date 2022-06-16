@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * _strdup - duplicates a str in the heap memory.
@@ -10,7 +10,7 @@ char *_strdup(const char *s)
 	char *new;
 	size_t len;
 
-len = _strlen(s);
+	len = _strlen(s);
 	new = malloc(sizeof(char) * (len + 1));
 	if (new == NULL)
 		return (NULL);

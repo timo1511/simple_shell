@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _SIMPLE_SHELL_
+#define _SIMPLE_SHELL_
 
 #include <stdio.h>
 #include <unistd.h>
@@ -19,6 +19,7 @@
 /* Points to an array of pointers to strings called the "environment" */
 extern char **environ;
 
+
 /**
  * struct data - struct that contains all relevant data on runtime
  * @av: argument vector
@@ -29,16 +30,15 @@ extern char **environ;
  * @_environ: environment variable
  * @pid: process ID of the shell
  */
-
 typedef struct data
 {
-char **av;
-char *input;
-char **args;
-int status;
-int counter;
-char **_environ;
-char *pid;
+	char **av;
+	char *input;
+	char **args;
+	int status;
+	int counter;
+	char **_environ;
+	char *pid;
 } data_shell;
 
 /**
@@ -47,11 +47,10 @@ char *pid;
  * @next: next node
  * Description: single linked list to store separators
  */
-
 typedef struct sep_list_s
 {
-char separator;
-struct sep_list_s *next;
+	char separator;
+	struct sep_list_s *next;
 } sep_list;
 
 /**
@@ -60,11 +59,10 @@ struct sep_list_s *next;
  * @next: next node
  * Description: single linked list to store command lines
  */
-
 typedef struct line_list_s
 {
-char *line;
-struct line_list_s *next;
+	char *line;
+	struct line_list_s *next;
 } line_list;
 
 /**
@@ -77,10 +75,10 @@ struct line_list_s *next;
  */
 typedef struct r_var_list
 {
-int len_var;
-char *val;
-int len_val;
-struct r_var_list *next;
+	int len_var;
+	char *val;
+	int len_val;
+	struct r_var_list *next;
 } r_var;
 
 /**
@@ -90,8 +88,8 @@ struct r_var_list *next;
  */
 typedef struct builtin_s
 {
-char *name;
-int (*f)(data_shell *datash);
+	char *name;
+	int (*f)(data_shell *datash);
 } builtin_t;
 
 /* aux_lists.c */
@@ -209,6 +207,7 @@ char *error_env(data_shell *datash);
 char *error_syntax(char **args);
 char *error_permission(char **args);
 char *error_path_126(data_shell *datash);
+
 
 /* get_error.c */
 int get_error(data_shell *datash, int eval);

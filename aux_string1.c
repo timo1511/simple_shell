@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * _strcat - concatenate two strings
@@ -8,19 +8,19 @@
  */
 char *_strcat(char *dest, const char *src)
 {
-	int i;
-	int j;
+	int x;
+	int n;
 
-for (i = 0; dest[i] != '\0'; i++)
+	for (x = 0; dest[x] != '\0'; x++)
 		;
 
-	for (j = 0; src[j] != '\0'; j++)
+	for (n = 0; src[n] != '\0'; n++)
 	{
-		dest[i] = src[j];
-		i++;
+		dest[x] = src[n];
+		x++;
 	}
 
-	dest[i] = '\0';
+	dest[x] = '\0';
 	return (dest);
 }
 /**
@@ -32,14 +32,13 @@ for (i = 0; dest[i] != '\0'; i++)
 char *_strcpy(char *dest, char *src)
 {
 
-	size_t a;
+	size_t x;
 
-
-for (a = 0; src[a] != '\0'; a++)
+	for (x = 0; src[x] != '\0'; x++)
 	{
-		dest[a] = src[a];
+		dest[x] = src[x];
 	}
-	dest[a] = '\0';
+	dest[x] = '\0';
 
 	return (dest);
 }
@@ -51,14 +50,14 @@ for (a = 0; src[a] != '\0'; a++)
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int x;
 
-	for (i = 0; s1[i] == s2[i] && s1[i]; i++)
+	for (x = 0; s1[x] == s2[x] && s1[x]; x++)
 		;
 
-	if (s1[i] > s2[i])
+	if (s1[x] > s2[x])
 		return (1);
-	if (s1[i] < s2[i])
+	if (s1[x] < s2[x])
 		return (-1);
 	return (0);
 }
@@ -70,13 +69,13 @@ int _strcmp(char *s1, char *s2)
  */
 char *_strchr(char *s, char c)
 {
-	unsigned int i = 0;
+	unsigned int x = 0;
 
-	for (; *(s + i) != '\0'; i++)
-		if (*(s + i) == c)
-			return (s + i);
-	if (*(s + i) == c)
-		return (s + i);
+	for (; *(s + x) != '\0'; x++)
+		if (*(s + x) == c)
+			return (s + x);
+	if (*(s + x) == c)
+		return (s + x);
 	return ('\0');
 }
 /**
@@ -87,14 +86,14 @@ char *_strchr(char *s, char c)
  */
 int _strspn(char *s, char *accept)
 {
-	int i, j, bool;
+	int x, n, bool;
 
-for (i = 0; *(s + i) != '\0'; i++)
+	for (x = 0; *(s + x) != '\0'; x++)
 	{
 		bool = 1;
-		for (j = 0; *(accept + j) != '\0'; j++)
+		for (n = 0; *(accept + n) != '\0'; n++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (*(s + x) == *(accept + n))
 			{
 				bool = 0;
 				break;
@@ -103,5 +102,5 @@ for (i = 0; *(s + i) != '\0'; i++)
 		if (bool == 1)
 			break;
 	}
-	return (i);
+	return (x);
 }

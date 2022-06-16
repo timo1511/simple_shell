@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * copy_info - copies info to create
@@ -22,7 +22,7 @@ char *copy_info(char *name, char *value)
 	_strcat(new, value);
 	_strcat(new, "\0");
 
-return (new);
+	return (new);
 }
 
 /**
@@ -57,7 +57,6 @@ void set_env(char *name, char *value, data_shell *datash)
 	datash->_environ[i + 1] = NULL;
 }
 
-
 /**
  * _setenv - compares env variables names
  * with the name passed.
@@ -76,7 +75,7 @@ int _setenv(data_shell *datash)
 
 	set_env(datash->args[1], datash->args[2], datash);
 
-return (1);
+	return (1);
 }
 
 /**

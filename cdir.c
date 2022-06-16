@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * cd_dot - changes to the parent directory
@@ -61,10 +61,9 @@ void cd_dot(data_shell *datash)
 void cd_to(data_shell *datash)
 {
 	char pwd[PATH_MAX];
+	char *dir, *cp_pwd, *cp_dir;
 
-char *dir, *cp_pwd, *cp_dir;
-
-getcwd(pwd, sizeof(pwd));
+	getcwd(pwd, sizeof(pwd));
 
 	dir = datash->args[1];
 	if (chdir(dir) == -1)
@@ -84,7 +83,7 @@ getcwd(pwd, sizeof(pwd));
 
 	datash->status = 0;
 
-chdir(dir);
+	chdir(dir);
 }
 
 /**
@@ -98,7 +97,7 @@ void cd_previous(data_shell *datash)
 	char pwd[PATH_MAX];
 	char *p_pwd, *p_oldpwd, *cp_pwd, *cp_oldpwd;
 
-getcwd(pwd, sizeof(pwd));
+	getcwd(pwd, sizeof(pwd));
 	cp_pwd = _strdup(pwd);
 
 	p_oldpwd = _getenv("OLDPWD", datash->_environ);

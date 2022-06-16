@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * add_rvar_node - adds a variable at the end
@@ -13,15 +13,15 @@ r_var *add_rvar_node(r_var **head, int lvar, char *val, int lval)
 {
 	r_var *new, *temp;
 
-new = malloc(sizeof(r_var));
+	new = malloc(sizeof(r_var));
 	if (new == NULL)
 		return (NULL);
 
-new->len_var = lvar;
+	new->len_var = lvar;
 	new->val = val;
 	new->len_val = lval;
 
-new->next = NULL;
+	new->next = NULL;
 	temp = *head;
 
 	if (temp == NULL)
@@ -35,8 +35,7 @@ new->next = NULL;
 		temp->next = new;
 	}
 
-
-return (*head);
+	return (*head);
 }
 
 /**
@@ -47,14 +46,14 @@ return (*head);
 void free_rvar_list(r_var **head)
 {
 	r_var *temp;
-	r_var *curr;
+	r_var *current;
 
 	if (head != NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
+		current = *head;
+		while ((temp = current) != NULL)
 		{
-			curr = curr->next;
+			current = current->next;
 			free(temp);
 		}
 		*head = NULL;

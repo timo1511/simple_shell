@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * add_sep_node_end - adds a separator found at the end
@@ -15,7 +15,7 @@ sep_list *add_sep_node_end(sep_list **head, char sep)
 	if (new == NULL)
 		return (NULL);
 
-new->separator = sep;
+	new->separator = sep;
 	new->next = NULL;
 	temp = *head;
 
@@ -41,14 +41,14 @@ new->separator = sep;
 void free_sep_list(sep_list **head)
 {
 	sep_list *temp;
-	sep_list *curr;
+	sep_list *current;
 
 	if (head != NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
+		current = *head;
+		while ((temp = current) != NULL)
 		{
-			curr = curr->next;
+			current = current->next;
 			free(temp);
 		}
 		*head = NULL;
@@ -96,15 +96,14 @@ line_list *add_line_node_end(line_list **head, char *line)
 void free_line_list(line_list **head)
 {
 	line_list *temp;
-	line_list *curr;
+	line_list *current;
 
-
-if (head != NULL)
+	if (head != NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
+		current = *head;
+		while ((temp = current) != NULL)
 		{
-			curr = curr->next;
+			current = current->next;
 			free(temp);
 		}
 		*head = NULL;

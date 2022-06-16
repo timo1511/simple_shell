@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * check_env - checks if the typed variable is an env variable
@@ -175,9 +175,9 @@ char *rep_var(char *input, data_shell *datash)
 
 	new_input = replaced_input(&head, input, new_input, nlen);
 
-free(input);
+	free(input);
 	free(status);
 	free_rvar_list(&head);
 
-return (new_input);
+	return (new_input);
 }

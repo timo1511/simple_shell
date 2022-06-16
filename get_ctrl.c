@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * get_sigint - Handle the crtl + c call in prompt
@@ -6,6 +6,6 @@
  */
 void get_sigint(int sig)
 {
-(void)sig;
+	(void)sig;
 	write(STDOUT_FILENO, "\n^-^ ", 5);
 }
