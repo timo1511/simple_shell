@@ -6,7 +6,7 @@
 *return -always 0
 */
 
-int main()
+int main(void)
 {
 pid_t my_unique_pid;
 
