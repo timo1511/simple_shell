@@ -1,31 +1,18 @@
-#!/bin/bash
-# Simply a wrapper script to keep you from having to use betty-style
-# and betty-doc separately on every item.
-# Originally by Tim Britton (@wintermanc3r), multiargument added by
-# Larry Madeo (@hillmonkey)
+#include <stdio.h>
+#include <unistd.h>
 
-BIN_PATH="betty"
-BETTY_STYLE="betty-style.pl"
-BETTY_DOC="betty-doc.pl"
-STATUS_CODE="0"
+/**
+ * main - PID
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	pid_t my_pid;
 
-if [ "$#" = "0" ]; then
-    echo "No arguments passed."
-    exit 1
-fi
-
-for argument in "$@" ; do
-    echo -e "\n========== $argument =========="
-    ${BIN_PATH}/${BETTY_STYLE} "$argument"
-    CODE=$?
-    if (($CODE != 0)); then
-        STATUS_CODE=$CODE
-    fi
-    ${BIN_PATH}/${BETTY_DOC} "$argument"
-    CODE=$?
-    if (($CODE != 0)); then
-        STATUS_CODE=$CODE
-    fi
-done
-
-exit $STATUS_CODE
+	my_pid = getpid();
+	printf("hijo %u\n", my_pid);
+	my_pid = getppid();
+	printf("padre %u\n", my_pid);
+	return (0);
+}
