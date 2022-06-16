@@ -1,4 +1,5 @@
-This file lists all the contributors to this project.
+# This file lists all individuals having contributed content to the repository.
+# For how it is generated, see `hack/generate-authors.sh`.
 
-1. Adesoji Alu  <adesoji.alu@gmail.com>
-2. Cephas James <jamescephason@gmail.com>
+Adesoji Alu <>
+James Cephas <jamescephason@gmail.com>

@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _strcat - concatenate two strings
  * @dest: char pointer the dest of the copied str
