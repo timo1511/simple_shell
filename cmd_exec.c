@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * is_cdir - checks ":" if is in the current directory.
@@ -19,7 +19,7 @@ int is_cdir(char *path, int *i)
 	if (path[*i])
 		*i += 1;
 
-return (0);
+	return (0);
 }
 
 /**

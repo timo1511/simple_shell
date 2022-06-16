@@ -1,6 +1,7 @@
-B.\"Manpage for simple shell
-.\"Created by Oghenemaro Odibo and Nworah Chimzuruoke
-.TH SODASH 1 "June 2022" "ALX SE" "SODA SHELL - Simple Shell man page"
+B.\"Manpage for simple shell 
+.\"Created by Caleb Nyong and Matthew Lawrence
+
+.TH SODASH 1 "May 18 2022" "SODA SHELL - Simple Shell man page"
 
 .SH NAME
 sodash\fR \- simple UNIX command interpreter
@@ -9,7 +10,8 @@ sodash\fR \- simple UNIX command interpreter
 soda\fR [\fIfilename\fR]
 
 .SH COPYRIGHT
-soda is Copyright (C) 2022 by Oghenemaro Odibo and Nworah Chimzuruoke
+soda is Copyright (C) 2022 by Caleb Nyong and Matthew Lawrence
+
 .SH DESCRIPTION
 Soda\fR is a sh-compatible command language interpreter that executes commands read from the standard input or from a file.
 
@@ -59,11 +61,6 @@ Sodash\fR exit status of an executed command is the value returned by the waitpi
 
 If a command is not found, the child process created to execute it returns a status of 127.
 
-.SH Exit Status
-Sodash\fR exit status of an executed command is the value returned by the waitpid system call or equivalent function. A command which exits with a zero exit status has succeeded. An exit status of zero indicates success. A non-zero exit status indicates failure.
-
-If a command is not found, the child process created to execute it returns a status of 127.
-
 All builtins return zero on success and one or two on incorrect usage (indicated by a corresponding error message).
 
 .SH BUILTINS
@@ -98,4 +95,4 @@ access(2), chdir(2), execve(2), _exit(2), exit(3), fflush(3), fork(2), free(3), 
 Sodash\fR takes basic functionality of the \fBsh\fR shell. This man page is based on the man page bash(1)
 
 .SH AUTHORS
-Oghenemaro Odibo and Nworah Chimzuruoke
+Caleb Nyong & Matthew Lawrence

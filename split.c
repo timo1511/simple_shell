@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * swap_char - swaps | and & for non-printed chars
@@ -16,7 +16,7 @@ char *swap_char(char *input, int bool)
 		for (i = 0; input[i]; i++)
 		{
 			if (input[i] == '|')
-{
+			{
 				if (input[i + 1] != '|')
 					input[i] = 16;
 				else
@@ -42,6 +42,7 @@ char *swap_char(char *input, int bool)
 	}
 	return (input);
 }
+
 /**
  * add_nodes - add separators and command lines in the lists
  *
@@ -60,7 +61,7 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 	for (i = 0; input[i]; i++)
 	{
 		if (input[i] == ';')
-add_sep_node_end(head_s, input[i]);
+			add_sep_node_end(head_s, input[i]);
 
 		if (input[i] == '|' || input[i] == '&')
 		{
@@ -77,7 +78,6 @@ add_sep_node_end(head_s, input[i]);
 	} while (line != NULL);
 
 }
-
 
 /**
  * go_next - go to the next command line stored
@@ -117,7 +117,7 @@ void go_next(sep_list **list_s, line_list **list_l, data_shell *datash)
 			ls_s = ls_s->next;
 	}
 
-*list_s = ls_s;
+	*list_s = ls_s;
 	*list_l = ls_l;
 }
 
@@ -146,7 +146,7 @@ int split_commands(data_shell *datash, char *input)
 
 	while (list_l != NULL)
 	{
-datash->input = list_l->line;
+		datash->input = list_l->line;
 		datash->args = split_line(datash->input);
 		loop = exec_line(datash);
 		free(datash->args);
@@ -176,8 +176,7 @@ datash->input = list_l->line;
  */
 char **split_line(char *input)
 {
-
-size_t bsize;
+	size_t bsize;
 	size_t i;
 	char **tokens;
 	char *token;
@@ -209,5 +208,5 @@ size_t bsize;
 		tokens[i] = token;
 	}
 
-return (tokens);
+	return (tokens);
 }

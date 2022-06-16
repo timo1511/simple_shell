@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * aux_help_env - Help information for the builtin env
@@ -15,7 +15,7 @@ void aux_help_env(void)
 }
 /**
  * aux_help_setenv - Help information for the builtin setenv
- * Return: no return
+ * Return: return nothing
  */
 void aux_help_setenv(void)
 {
@@ -30,20 +30,21 @@ void aux_help_setenv(void)
 }
 /**
  * aux_help_unsetenv - Help information for the builtin unsetenv
- * Return: no return
+ * Return: return nothing
  */
 void aux_help_unsetenv(void)
 {
 	char *help = "unsetenv: unsetenv (const char *name)\n\t";
 
-write(STDOUT_FILENO, help, _strlen(help));
+	write(STDOUT_FILENO, help, _strlen(help));
 	help = "Remove an entry completely from the environment\n";
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 
+
 /**
  * aux_help_general - Entry point for help information for the help builtin
- * Return: no return
+ * Return: return nothing
  */
 void aux_help_general(void)
 {
@@ -65,12 +66,11 @@ void aux_help_general(void)
 }
 /**
  * aux_help_exit - Help information fot the builint exit
- * Return: no return
+ * Return: return nothing
  */
 void aux_help_exit(void)
 {
-
-char *help = "exit: exit [n]\n Exit shell.\n";
+	char *help = "exit: exit [n]\n Exit shell.\n";
 
 	write(STDOUT_FILENO, help, _strlen(help));
 	help = "Exits the shell with a status of N. If N is ommited, the exit";

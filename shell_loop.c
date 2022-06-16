@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * without_comment - deletes comments from the input
@@ -46,7 +46,7 @@ void shell_loop(data_shell *datash)
 	int loop, i_eof;
 	char *input;
 
-loop = 1;
+	loop = 1;
 	while (loop == 1)
 	{
 		write(STDIN_FILENO, "^-^ ", 4);

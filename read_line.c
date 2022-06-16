@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * read_line - reads the input string.
@@ -8,10 +8,10 @@
  */
 char *read_line(int *i_eof)
 {
-char *input = NULL;
+	char *input = NULL;
 	size_t bufsize = 0;
 
-*i_eof = getline(&input, &bufsize, stdin);
+	*i_eof = getline(&input, &bufsize, stdin);
 
-return (input);
+	return (input);
 }

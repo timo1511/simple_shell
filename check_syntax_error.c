@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * repeated_char - counts the repetitions of a char
@@ -173,6 +173,5 @@ int check_syntax_error(data_shell *datash, char *input)
 		return (1);
 	}
 
-return (0);
-
+	return (0);
 }

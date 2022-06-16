@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple_shell.h"
 
 /**
  * aux_help - Help information for the builtin help.
@@ -32,8 +32,7 @@ void aux_help_alias(void)
  */
 void aux_help_cd(void)
 {
-
-char *help = "cd: cd [-L|[-P [-e]] [-@]] [dir]\n";
+	char *help = "cd: cd [-L|[-P [-e]] [-@]] [dir]\n";
 
 	write(STDOUT_FILENO, help, _strlen(help));
 	help = "\tChange the shell working directory.\n ";
