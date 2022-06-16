@@ -15,7 +15,7 @@ printf("Before fork\n");
 pid = fork();
 if (pid == -1)
 {
-perror("Error:");
+perror("Error:\t");
 return (1);
 
 printf("After fork\n");
