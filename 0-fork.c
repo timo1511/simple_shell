@@ -15,8 +15,8 @@ printf("Before fork\n");
 pid = fork();
 if (pid == -1)
 {
-perror("Error:\t");
-return (1);
+	perror("Error:");
+	return (1);
 
 printf("After fork\n");
 my_pid = getpid();
