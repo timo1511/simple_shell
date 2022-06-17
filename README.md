@@ -1,1 +1,1 @@
-This is the readme file that contains description to ALX Simple Shell project done by Adesoji and Cephas.
+In this directory we are going to be doing tasks to make a simple shell
